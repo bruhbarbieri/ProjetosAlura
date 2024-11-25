@@ -66,7 +66,7 @@ public class Principal {
                 .flatMap(t -> t.episodios().stream()
                         .map(d -> new Episodio(t.numero(), d))
                 ).collect(Collectors.toList());
-
+   
         episodios.forEach(System.out::println);
 
 //        System.out.println("Digite um trecho do título do episódio");

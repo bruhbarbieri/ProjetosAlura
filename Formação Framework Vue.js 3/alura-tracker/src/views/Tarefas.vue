@@ -1,26 +1,26 @@
 <template>
-    <Formulario @aoSalvarTarefa="salvarTarefa"/>
+    <FormularioCadastro @aoSalvarTarefa="salvarTarefa"/>
     <div class="lista">
-        <Box v-if="semTarefas">
+        <BoxFormulario v-if="semTarefas">
             Você não está muito produtivo hoje <span class="has-text-weight-bold">:(</span>
-        </Box>
-        <Tarefa v-for="(tarefa, index) in tarefas" :tarefa="tarefa" :key="index"/>
+        </BoxFormulario>
+        <TarefaFormulario v-for="(tarefa, index) in tarefas" :tarefa="tarefa" :key="index"/>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Formulario from "../components/Formulario.vue";
-import Tarefa from "../components/Tarefa.vue";
-import Box from "../components/Box.vue";
+import FormularioCadastro from "@/components/FormularioCadastro.vue";
+import TarefaFormulario from "@/components/TarefaFormulario.vue";
+import BoxFormulario from "@/components/BoxFormulario.vue";
 import ITarefa from "../interfaces/ITarefa"
 
 export default defineComponent({
-  name: "App",
+  name: "TarefasView",
   components: {
-    Formulario,
-    Tarefa,
-    Box
+    FormularioCadastro,
+    TarefaFormulario,
+    BoxFormulario
   },
   data () {
     return {
